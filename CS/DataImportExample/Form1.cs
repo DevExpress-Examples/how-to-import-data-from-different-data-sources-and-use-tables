@@ -5,16 +5,17 @@ using DevExpress.Spreadsheet;
 using System.Collections.Generic;
 
 namespace DataImportExample {
-    public partial class Form1 : Form {
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    {
         public Form1() {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnImportDataTable_Click(object sender, EventArgs e) {
             spreadsheetControl1.Document.BeginUpdate();
             try {
                 Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-                worksheet.DeleteCells(worksheet.Cells, DeleteMode.ShiftCellsLeft);
+                worksheet.Clear(worksheet.GetUsedRange());
                 ImportDataTable();
                 CreateTable();
             }
@@ -23,7 +24,7 @@ namespace DataImportExample {
             }
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void btnImportArray_Click(object sender, EventArgs e) {
             spreadsheetControl1.Document.BeginUpdate();
             try {
                 Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
@@ -38,7 +39,7 @@ namespace DataImportExample {
             }   
         }
 
-        private void button3_Click(object sender, EventArgs e) {
+        private void btnImportList_Click(object sender, EventArgs e) {
             spreadsheetControl1.Document.BeginUpdate();
             try {
                 Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
@@ -188,7 +189,7 @@ namespace DataImportExample {
             #endregion #ImportArrayList
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnImportObject_Click(object sender, EventArgs e)
         {
             Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
             worksheet.Clear(worksheet.GetUsedRange());
@@ -198,7 +199,7 @@ namespace DataImportExample {
         }
 
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnUseOptions_Click(object sender, EventArgs e)
         {
             Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
             worksheet.Clear(worksheet.GetUsedRange());
@@ -212,7 +213,7 @@ namespace DataImportExample {
             #endregion #ImportUsingOptions
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnUseFields_Click(object sender, EventArgs e)
         {
             Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
             worksheet.Clear(worksheet.GetUsedRange());
@@ -224,7 +225,7 @@ namespace DataImportExample {
             #endregion #ImportSpecifiedFields
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnUseConverter_Click(object sender, EventArgs e)
         {
             Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
             worksheet.Clear(worksheet.GetUsedRange());
@@ -235,7 +236,5 @@ namespace DataImportExample {
             worksheet.Import(list, 0, 0, new DataSourceImportOptions() { Converter = new TestDataValueConverter() });
             #endregion #ImportUsingConverter
         }
-
-
     }
 }

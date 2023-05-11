@@ -5,18 +5,18 @@ Imports DevExpress.Spreadsheet
 Imports System.Collections.Generic
 
 Namespace DataImportExample
-	Partial Public Class Form1
-		Inherits Form
+    Partial Public Class Form1
+        Inherits DevExpress.XtraEditors.XtraForm
 
-		Public Sub New()
+        Public Sub New()
 			InitializeComponent()
 		End Sub
 
-		Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button1.Click
+		Private Sub btnImportDataTable_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImportDataTable.Click
 			spreadsheetControl1.Document.BeginUpdate()
 			Try
 				Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
-				worksheet.DeleteCells(worksheet.Cells, DeleteMode.ShiftCellsLeft)
+				worksheet.Clear(worksheet.GetUsedRange())
 				ImportDataTable()
 				CreateTable()
 			Finally
@@ -24,7 +24,7 @@ Namespace DataImportExample
 			End Try
 		End Sub
 
-		Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button2.Click
+		Private Sub btnImportArray_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImportArray.Click
 			spreadsheetControl1.Document.BeginUpdate()
 			Try
 				Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
@@ -38,7 +38,7 @@ Namespace DataImportExample
 			End Try
 		End Sub
 
-		Private Sub button3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button3.Click
+		Private Sub btnImportList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImportList.Click
 			spreadsheetControl1.Document.BeginUpdate()
 			Try
 				Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
@@ -51,7 +51,7 @@ Namespace DataImportExample
 			End Try
 		End Sub
 
-		Private Sub btnArrayList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnArrayList.Click
+		Private Sub btnImportArrayList_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImportArrayList.Click
 			spreadsheetControl1.Document.BeginUpdate()
 			Try
 				Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
@@ -62,7 +62,7 @@ Namespace DataImportExample
 			End Try
 		End Sub
 
-		#Region "#ImportDataTable"
+#Region "#ImportDataTable"
 		Private Sub ImportDataTable()
 
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
@@ -137,7 +137,7 @@ Namespace DataImportExample
 
 		Private Sub ImportArrays()
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
-'			#Region "#ImportArrays"
+#Region "#ImportArrays"
 			' Create an array containing string values.
 			Dim array() As String = { "AAA", "BBB", "CCC", "DDD" }
 
@@ -152,12 +152,12 @@ Namespace DataImportExample
 
 			' Import the two-dimensional array into the worksheet and insert it, starting with the B3 cell.
 			worksheet.Import(names, 2, 1)
-'			#End Region ' #ImportArrays
+#End Region ' #ImportArrays
 		End Sub
 
 		Private Sub ImportList()
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
-'			#Region "#ImportList"
+#Region "#ImportList"
 			' Create a List object containing string values.
 			Dim cities As New List(Of String)()
 			cities.Add("New York")
@@ -167,64 +167,64 @@ Namespace DataImportExample
 
 			' Import the list into the worksheet and insert it vertically, starting with the B1 cell.
 			worksheet.Import(cities, 0, 1, True)
-'			#End Region ' #ImportList
+#End Region ' #ImportList
 		End Sub
 
 		Private Sub ImportArrayList()
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
-'			#Region "#ImportArrayList"
+#Region "#ImportArrayList"
 			Dim listDataSource As New System.Collections.ArrayList()
 			listDataSource.Add(New TestObject(1, "Jane", True))
 			listDataSource.Add(New TestObject(2, "Joe", False))
 			listDataSource.Add(New TestObject(3, "Bill", True))
 			listDataSource.Add(New TestObject(4, "Michael", False))
 			worksheet.Import(listDataSource, 0, 0)
-'			#End Region ' #ImportArrayList
+#End Region ' #ImportArrayList
 		End Sub
 
-		Private Sub button4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button4.Click
+		Private Sub btnImportObject_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImportObject.Click
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
 			worksheet.Clear(worksheet.GetUsedRange())
-'			#Region "#ImportObject"
+#Region "#ImportObject"
 			worksheet.Import(New TestObject(1, "1", True), 0, 0)
-'			#End Region ' #ImportObject
+#End Region ' #ImportObject
 		End Sub
 
 
-		Private Sub button5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button5.Click
+		Private Sub btnUseOptions_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUseOptions.Click
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
 			worksheet.Clear(worksheet.GetUsedRange())
-'			#Region "#ImportUsingOptions"
-			Dim arrayR1C1() As String = { "a", "b", "=R1C1&R1C2" }
+#Region "#ImportUsingOptions"
+			Dim arrayR1C1() As String = {"a", "b", "=R1C1&R1C2"}
 			worksheet.Import(arrayR1C1, 0, 0, False, New DataImportOptions() With {.ImportFormulas = True, .ReferenceStyle = ReferenceStyle.R1C1})
 
-			Dim arrayLocalized() As String = { "a", "=1,2+1" }
+			Dim arrayLocalized() As String = {"a", "=1,2+1"}
 			worksheet.Import(arrayLocalized, 1, 0, False, New DataImportOptions() With {.ImportFormulas = True, .FormulaCulture = New System.Globalization.CultureInfo("de-DE")})
-'			#End Region ' #ImportUsingOptions
+#End Region ' #ImportUsingOptions
 		End Sub
 
-		Private Sub button6_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button6.Click
+		Private Sub btnUseFields_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUseFields.Click
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
 			worksheet.Clear(worksheet.GetUsedRange())
-'			#Region "#ImportSpecifiedFields"
+#Region "#ImportSpecifiedFields"
 			Dim list As New List(Of TestObject)()
 			list.Add(New TestObject(1, "1", True))
 			list.Add(New TestObject(2, "2", False))
 			worksheet.Import(list, 0, 0, New DataSourceImportOptions() With {
-				.PropertyNames = New String() { "BoolValue", "IntValue" }
+				.PropertyNames = New String() {"BoolValue", "IntValue"}
 			})
-'			#End Region ' #ImportSpecifiedFields
+#End Region ' #ImportSpecifiedFields
 		End Sub
 
-		Private Sub button7_Click(ByVal sender As Object, ByVal e As EventArgs) Handles button7.Click
+		Private Sub btnUseConverter_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUseConverter.Click
 			Dim worksheet As Worksheet = spreadsheetControl1.Document.Worksheets(0)
 			worksheet.Clear(worksheet.GetUsedRange())
-'			#Region "#ImportUsingConverter"
+#Region "#ImportUsingConverter"
 			Dim list As New List(Of TestObject)()
 			list.Add(New TestObject(1, "1", True))
 			list.Add(New TestObject(2, "2", False))
 			worksheet.Import(list, 0, 0, New DataSourceImportOptions() With {.Converter = New TestDataValueConverter()})
-'			#End Region ' #ImportUsingConverter
+#End Region ' #ImportUsingConverter
 		End Sub
 
 

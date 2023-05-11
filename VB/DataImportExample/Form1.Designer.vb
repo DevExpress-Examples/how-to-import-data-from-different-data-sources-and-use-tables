@@ -23,240 +23,209 @@
 		''' the contents of this method with the code editor.
 		''' </summary>
 		Private Sub InitializeComponent()
-			Me.components = New System.ComponentModel.Container()
-			Me.spreadsheetControl1 = New DevExpress.XtraSpreadsheet.SpreadsheetControl()
-			Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-			Me.btnArrayList = New System.Windows.Forms.Button()
-			Me.button7 = New System.Windows.Forms.Button()
-			Me.button6 = New System.Windows.Forms.Button()
-			Me.button5 = New System.Windows.Forms.Button()
-			Me.button4 = New System.Windows.Forms.Button()
-			Me.button3 = New System.Windows.Forms.Button()
-			Me.button2 = New System.Windows.Forms.Button()
-			Me.button1 = New System.Windows.Forms.Button()
-			Me.splitterControl1 = New DevExpress.XtraEditors.SplitterControl()
-			Me.splitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
-			Me.spreadsheetNameBoxControl1 = New DevExpress.XtraSpreadsheet.SpreadsheetNameBoxControl()
-			Me.spreadsheetFormulaBarControl1 = New DevExpress.XtraSpreadsheet.SpreadsheetFormulaBarControl()
-			Me.spreadsheetDockManager1 = New DevExpress.XtraSpreadsheet.SpreadsheetDockManager(Me.components)
-			DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			Me.splitContainerControl1.SuspendLayout()
-			DirectCast(Me.splitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-			Me.splitContainerControl2.SuspendLayout()
-			DirectCast(Me.spreadsheetNameBoxControl1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-			DirectCast(Me.spreadsheetDockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-			Me.SuspendLayout()
-			' 
-			' spreadsheetControl1
-			' 
-			Me.spreadsheetControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.spreadsheetControl1.Location = New System.Drawing.Point(0, 25)
-			Me.spreadsheetControl1.Name = "spreadsheetControl1"
-			Me.spreadsheetControl1.Options.Export.Csv.Culture = New System.Globalization.CultureInfo("")
-			Me.spreadsheetControl1.Options.Export.Txt.Culture = New System.Globalization.CultureInfo("")
-			Me.spreadsheetControl1.Options.Export.Txt.ValueSeparator = ","c
-			Me.spreadsheetControl1.Options.Import.Csv.Culture = New System.Globalization.CultureInfo("")
-			Me.spreadsheetControl1.Options.Import.Txt.Culture = New System.Globalization.CultureInfo("")
-			Me.spreadsheetControl1.Size = New System.Drawing.Size(575, 451)
-			Me.spreadsheetControl1.TabIndex = 0
-			Me.spreadsheetControl1.Text = "spreadsheetControl1"
-			' 
-			' splitContainerControl1
-			' 
-			Me.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.splitContainerControl1.Location = New System.Drawing.Point(0, 0)
-			Me.splitContainerControl1.Name = "splitContainerControl1"
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.btnArrayList)
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.button7)
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.button6)
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.button5)
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.button4)
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.button3)
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.button2)
-			Me.splitContainerControl1.Panel1.Controls.Add(Me.button1)
-			Me.splitContainerControl1.Panel1.Text = "Panel1"
-			Me.splitContainerControl1.Panel2.Controls.Add(Me.spreadsheetControl1)
-			Me.splitContainerControl1.Panel2.Controls.Add(Me.splitterControl1)
-			Me.splitContainerControl1.Panel2.Controls.Add(Me.splitContainerControl2)
-			Me.splitContainerControl1.Panel2.Text = "Panel2"
-			Me.splitContainerControl1.Size = New System.Drawing.Size(724, 476)
-			Me.splitContainerControl1.SplitterPosition = 144
-			Me.splitContainerControl1.TabIndex = 1
-			Me.splitContainerControl1.Text = "splitContainerControl1"
-			' 
-			' btnArrayList
-			' 
-			Me.btnArrayList.Location = New System.Drawing.Point(3, 122)
-			Me.btnArrayList.Name = "btnArrayList"
-			Me.btnArrayList.Size = New System.Drawing.Size(134, 23)
-			Me.btnArrayList.TabIndex = 7
-			Me.btnArrayList.Text = "Import ArrayList"
-			Me.btnArrayList.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.btnArrayList.Click += new System.EventHandler(this.btnArrayList_Click);
-			' 
-			' button7
-			' 
-			Me.button7.Location = New System.Drawing.Point(3, 209)
-			Me.button7.Name = "button7"
-			Me.button7.Size = New System.Drawing.Size(134, 23)
-			Me.button7.TabIndex = 6
-			Me.button7.Text = "Import Using Converter"
-			Me.button7.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button7.Click += new System.EventHandler(this.button7_Click);
-			' 
-			' button6
-			' 
-			Me.button6.Location = New System.Drawing.Point(3, 180)
-			Me.button6.Name = "button6"
-			Me.button6.Size = New System.Drawing.Size(134, 23)
-			Me.button6.TabIndex = 5
-			Me.button6.Text = "Import Specified Fields"
-			Me.button6.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button6.Click += new System.EventHandler(this.button6_Click);
-			' 
-			' button5
-			' 
-			Me.button5.Location = New System.Drawing.Point(3, 151)
-			Me.button5.Name = "button5"
-			Me.button5.Size = New System.Drawing.Size(134, 23)
-			Me.button5.TabIndex = 4
-			Me.button5.Text = "Import Using Options"
-			Me.button5.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button5.Click += new System.EventHandler(this.button5_Click);
-			' 
-			' button4
-			' 
-			Me.button4.Location = New System.Drawing.Point(3, 93)
-			Me.button4.Name = "button4"
-			Me.button4.Size = New System.Drawing.Size(134, 23)
-			Me.button4.TabIndex = 3
-			Me.button4.Text = "Import Object"
-			Me.button4.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button4.Click += new System.EventHandler(this.button4_Click);
-			' 
-			' button3
-			' 
-			Me.button3.Location = New System.Drawing.Point(3, 64)
-			Me.button3.Name = "button3"
-			Me.button3.Size = New System.Drawing.Size(134, 23)
-			Me.button3.TabIndex = 2
-			Me.button3.Text = "Import List"
-			Me.button3.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button3.Click += new System.EventHandler(this.button3_Click);
-			' 
-			' button2
-			' 
-			Me.button2.Location = New System.Drawing.Point(3, 35)
-			Me.button2.Name = "button2"
-			Me.button2.Size = New System.Drawing.Size(134, 23)
-			Me.button2.TabIndex = 1
-			Me.button2.Text = "Import Arrays"
-			Me.button2.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button2.Click += new System.EventHandler(this.button2_Click);
-			' 
-			' button1
-			' 
-			Me.button1.Location = New System.Drawing.Point(3, 3)
-			Me.button1.Name = "button1"
-			Me.button1.Size = New System.Drawing.Size(134, 26)
-			Me.button1.TabIndex = 0
-			Me.button1.Text = "Import DataTable"
-			Me.button1.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button1.Click += new System.EventHandler(this.button1_Click);
-			' 
-			' splitterControl1
-			' 
-			Me.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top
-			Me.splitterControl1.Location = New System.Drawing.Point(0, 20)
-			Me.splitterControl1.MinSize = 20
-			Me.splitterControl1.Name = "splitterControl1"
-			Me.splitterControl1.Size = New System.Drawing.Size(575, 5)
-			Me.splitterControl1.TabIndex = 1
-			Me.splitterControl1.TabStop = False
-			' 
-			' splitContainerControl2
-			' 
-			Me.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Top
-			Me.splitContainerControl2.Location = New System.Drawing.Point(0, 0)
-			Me.splitContainerControl2.MinimumSize = New System.Drawing.Size(0, 20)
-			Me.splitContainerControl2.Name = "splitContainerControl2"
-			Me.splitContainerControl2.Panel1.Controls.Add(Me.spreadsheetNameBoxControl1)
-			Me.splitContainerControl2.Panel2.Controls.Add(Me.spreadsheetFormulaBarControl1)
-			Me.splitContainerControl2.Size = New System.Drawing.Size(575, 20)
-			Me.splitContainerControl2.SplitterPosition = 145
-			Me.splitContainerControl2.TabIndex = 2
-			' 
-			' spreadsheetNameBoxControl1
-			' 
-			Me.spreadsheetNameBoxControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.spreadsheetNameBoxControl1.EditValue = "A1"
-			Me.spreadsheetNameBoxControl1.Location = New System.Drawing.Point(0, 0)
-			Me.spreadsheetNameBoxControl1.MinimumSize = New System.Drawing.Size(0, 20)
-			Me.spreadsheetNameBoxControl1.Name = "spreadsheetNameBoxControl1"
-			Me.spreadsheetNameBoxControl1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-			Me.spreadsheetNameBoxControl1.Size = New System.Drawing.Size(145, 20)
-			Me.spreadsheetNameBoxControl1.SpreadsheetControl = Me.spreadsheetControl1
-			Me.spreadsheetNameBoxControl1.TabIndex = 0
-			' 
-			' spreadsheetFormulaBarControl1
-			' 
-			Me.spreadsheetFormulaBarControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.spreadsheetFormulaBarControl1.Location = New System.Drawing.Point(0, 0)
-			Me.spreadsheetFormulaBarControl1.MinimumSize = New System.Drawing.Size(0, 20)
-			Me.spreadsheetFormulaBarControl1.Name = "spreadsheetFormulaBarControl1"
-			Me.spreadsheetFormulaBarControl1.Size = New System.Drawing.Size(425, 20)
-			Me.spreadsheetFormulaBarControl1.SpreadsheetControl = Me.spreadsheetControl1
-			Me.spreadsheetFormulaBarControl1.TabIndex = 0
-			' 
-			' spreadsheetDockManager1
-			' 
-			Me.spreadsheetDockManager1.Form = Me
-			Me.spreadsheetDockManager1.SpreadsheetControl = Me.spreadsheetControl1
-			Me.spreadsheetDockManager1.TopZIndexControls.AddRange(New String() { "DevExpress.XtraBars.BarDockControl", "DevExpress.XtraBars.StandaloneBarDockControl", "System.Windows.Forms.StatusBar", "System.Windows.Forms.MenuStrip", "System.Windows.Forms.StatusStrip", "DevExpress.XtraBars.Ribbon.RibbonStatusBar", "DevExpress.XtraBars.Ribbon.RibbonControl", "DevExpress.XtraBars.Navigation.OfficeNavigationBar", "DevExpress.XtraBars.Navigation.TileNavPane"})
-			' 
-			' Form1
-			' 
-			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
-			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-			Me.ClientSize = New System.Drawing.Size(724, 476)
-			Me.Controls.Add(Me.splitContainerControl1)
-			Me.Name = "Form1"
-			Me.Text = "Form1"
-			DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			Me.splitContainerControl1.ResumeLayout(False)
-			DirectCast(Me.splitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
-			Me.splitContainerControl2.ResumeLayout(False)
-			DirectCast(Me.spreadsheetNameBoxControl1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-			DirectCast(Me.spreadsheetDockManager1, System.ComponentModel.ISupportInitialize).EndInit()
-			Me.ResumeLayout(False)
+            Me.components = New System.ComponentModel.Container()
+            Me.spreadsheetControl1 = New DevExpress.XtraSpreadsheet.SpreadsheetControl()
+            Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+            Me.btnImportArrayList = New DevExpress.XtraEditors.SimpleButton()
+            Me.btnUseConverter = New DevExpress.XtraEditors.SimpleButton()
+            Me.btnUseFields = New DevExpress.XtraEditors.SimpleButton()
+            Me.btnUseOptions = New DevExpress.XtraEditors.SimpleButton()
+            Me.btnImportObject = New DevExpress.XtraEditors.SimpleButton()
+            Me.btnImportList = New DevExpress.XtraEditors.SimpleButton()
+            Me.btnImportArray = New DevExpress.XtraEditors.SimpleButton()
+            Me.btnImportDataTable = New DevExpress.XtraEditors.SimpleButton()
+            Me.spreadsheetDockManager1 = New DevExpress.XtraSpreadsheet.SpreadsheetDockManager(Me.components)
+            Me.SpreadsheetFormulaBar1 = New DevExpress.XtraSpreadsheet.SpreadsheetFormulaBar()
+            Me.SplitterControl1 = New DevExpress.XtraEditors.SplitterControl()
+            CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.splitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.splitContainerControl1.Panel1.SuspendLayout()
+            CType(Me.splitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.splitContainerControl1.Panel2.SuspendLayout()
+            Me.splitContainerControl1.SuspendLayout()
+            CType(Me.spreadsheetDockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.SuspendLayout()
+            '
+            'spreadsheetControl1
+            '
+            Me.spreadsheetControl1.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.spreadsheetControl1.Location = New System.Drawing.Point(0, 40)
+            Me.spreadsheetControl1.Margin = New System.Windows.Forms.Padding(4)
+            Me.spreadsheetControl1.Name = "spreadsheetControl1"
+            Me.spreadsheetControl1.Options.Export.Csv.Culture = New System.Globalization.CultureInfo("")
+            Me.spreadsheetControl1.Options.Export.Txt.Culture = New System.Globalization.CultureInfo("")
+            Me.spreadsheetControl1.Options.Export.Txt.ValueSeparator = Global.Microsoft.VisualBasic.ChrW(44)
+            Me.spreadsheetControl1.Options.Import.Csv.Culture = New System.Globalization.CultureInfo("")
+            Me.spreadsheetControl1.Options.Import.Txt.Culture = New System.Globalization.CultureInfo("")
+            Me.spreadsheetControl1.Size = New System.Drawing.Size(866, 546)
+            Me.spreadsheetControl1.TabIndex = 0
+            Me.spreadsheetControl1.Text = "spreadsheetControl1"
+            '
+            'splitContainerControl1
+            '
+            Me.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.splitContainerControl1.IsSplitterFixed = True
+            Me.splitContainerControl1.Location = New System.Drawing.Point(0, 0)
+            Me.splitContainerControl1.Margin = New System.Windows.Forms.Padding(4)
+            Me.splitContainerControl1.Name = "splitContainerControl1"
+            '
+            'splitContainerControl1.Panel1
+            '
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnImportArrayList)
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnUseConverter)
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnUseFields)
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnUseOptions)
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnImportObject)
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnImportList)
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnImportArray)
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.btnImportDataTable)
+            Me.splitContainerControl1.Panel1.Text = "Panel1"
+            '
+            'splitContainerControl1.Panel2
+            '
+            Me.splitContainerControl1.Panel2.Controls.Add(Me.spreadsheetControl1)
+            Me.splitContainerControl1.Panel2.Controls.Add(Me.SplitterControl1)
+            Me.splitContainerControl1.Panel2.Controls.Add(Me.SpreadsheetFormulaBar1)
+            Me.splitContainerControl1.Panel2.Text = "Panel2"
+            Me.splitContainerControl1.Size = New System.Drawing.Size(1046, 586)
+            Me.splitContainerControl1.SplitterPosition = 168
+            Me.splitContainerControl1.TabIndex = 1
+            Me.splitContainerControl1.Text = "splitContainerControl1"
+            '
+            'btnImportArrayList
+            '
+            Me.btnImportArrayList.Location = New System.Drawing.Point(4, 150)
+            Me.btnImportArrayList.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnImportArrayList.Name = "btnImportArrayList"
+            Me.btnImportArrayList.Size = New System.Drawing.Size(157, 28)
+            Me.btnImportArrayList.TabIndex = 7
+            Me.btnImportArrayList.Text = "Import ArrayList"
+            '
+            'btnUseConverter
+            '
+            Me.btnUseConverter.Location = New System.Drawing.Point(4, 257)
+            Me.btnUseConverter.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnUseConverter.Name = "btnUseConverter"
+            Me.btnUseConverter.Size = New System.Drawing.Size(157, 28)
+            Me.btnUseConverter.TabIndex = 6
+            Me.btnUseConverter.Text = "Import Using Converter"
+            '
+            'btnUseFields
+            '
+            Me.btnUseFields.Location = New System.Drawing.Point(4, 222)
+            Me.btnUseFields.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnUseFields.Name = "btnUseFields"
+            Me.btnUseFields.Size = New System.Drawing.Size(157, 28)
+            Me.btnUseFields.TabIndex = 5
+            Me.btnUseFields.Text = "Import Specified Fields"
+            '
+            'btnUseOptions
+            '
+            Me.btnUseOptions.Location = New System.Drawing.Point(4, 186)
+            Me.btnUseOptions.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnUseOptions.Name = "btnUseOptions"
+            Me.btnUseOptions.Size = New System.Drawing.Size(157, 28)
+            Me.btnUseOptions.TabIndex = 4
+            Me.btnUseOptions.Text = "Import Using Options"
+            '
+            'btnImportObject
+            '
+            Me.btnImportObject.Location = New System.Drawing.Point(4, 114)
+            Me.btnImportObject.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnImportObject.Name = "btnImportObject"
+            Me.btnImportObject.Size = New System.Drawing.Size(157, 28)
+            Me.btnImportObject.TabIndex = 3
+            Me.btnImportObject.Text = "Import Object"
+            '
+            'btnImportList
+            '
+            Me.btnImportList.Location = New System.Drawing.Point(4, 79)
+            Me.btnImportList.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnImportList.Name = "btnImportList"
+            Me.btnImportList.Size = New System.Drawing.Size(157, 28)
+            Me.btnImportList.TabIndex = 2
+            Me.btnImportList.Text = "Import List"
+            '
+            'btnImportArray
+            '
+            Me.btnImportArray.Location = New System.Drawing.Point(4, 43)
+            Me.btnImportArray.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnImportArray.Name = "btnImportArray"
+            Me.btnImportArray.Size = New System.Drawing.Size(157, 28)
+            Me.btnImportArray.TabIndex = 1
+            Me.btnImportArray.Text = "Import Arrays"
+            '
+            'btnImportDataTable
+            '
+            Me.btnImportDataTable.Location = New System.Drawing.Point(4, 4)
+            Me.btnImportDataTable.Margin = New System.Windows.Forms.Padding(4)
+            Me.btnImportDataTable.Name = "btnImportDataTable"
+            Me.btnImportDataTable.Size = New System.Drawing.Size(157, 32)
+            Me.btnImportDataTable.TabIndex = 0
+            Me.btnImportDataTable.Text = "Import DataTable"
+            '
+            'spreadsheetDockManager1
+            '
+            Me.spreadsheetDockManager1.Form = Me
+            Me.spreadsheetDockManager1.SpreadsheetControl = Me.spreadsheetControl1
+            Me.spreadsheetDockManager1.TopZIndexControls.AddRange(New String() {"DevExpress.XtraBars.BarDockControl", "DevExpress.XtraBars.StandaloneBarDockControl", "System.Windows.Forms.StatusBar", "System.Windows.Forms.MenuStrip", "System.Windows.Forms.StatusStrip", "DevExpress.XtraBars.Ribbon.RibbonStatusBar", "DevExpress.XtraBars.Ribbon.RibbonControl", "DevExpress.XtraBars.Navigation.OfficeNavigationBar", "DevExpress.XtraBars.Navigation.TileNavPane"})
+            '
+            'SpreadsheetFormulaBar1
+            '
+            Me.SpreadsheetFormulaBar1.Dock = System.Windows.Forms.DockStyle.Top
+            Me.SpreadsheetFormulaBar1.Location = New System.Drawing.Point(0, 0)
+            Me.SpreadsheetFormulaBar1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+            Me.SpreadsheetFormulaBar1.MinimumSize = New System.Drawing.Size(0, 24)
+            Me.SpreadsheetFormulaBar1.Name = "SpreadsheetFormulaBar1"
+            Me.SpreadsheetFormulaBar1.Size = New System.Drawing.Size(866, 28)
+            Me.SpreadsheetFormulaBar1.SpreadsheetControl = Me.spreadsheetControl1
+            Me.SpreadsheetFormulaBar1.TabIndex = 2
+            '
+            'SplitterControl1
+            '
+            Me.SplitterControl1.Dock = System.Windows.Forms.DockStyle.Top
+            Me.SplitterControl1.Location = New System.Drawing.Point(0, 28)
+            Me.SplitterControl1.MinSize = 20
+            Me.SplitterControl1.Name = "SplitterControl1"
+            Me.SplitterControl1.Size = New System.Drawing.Size(866, 12)
+            Me.SplitterControl1.TabIndex = 1
+            Me.SplitterControl1.TabStop = False
+            '
+            'Form1
+            '
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+            Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.ClientSize = New System.Drawing.Size(1046, 586)
+            Me.Controls.Add(Me.splitContainerControl1)
+            Me.Margin = New System.Windows.Forms.Padding(4)
+            Me.Name = "Form1"
+            Me.Text = "Form1"
+            CType(Me.splitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.splitContainerControl1.Panel1.ResumeLayout(False)
+            CType(Me.splitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.splitContainerControl1.Panel2.ResumeLayout(False)
+            CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.splitContainerControl1.ResumeLayout(False)
+            CType(Me.spreadsheetDockManager1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.ResumeLayout(False)
 
-		End Sub
+        End Sub
 
-		#End Region
+#End Region
 
-		Private spreadsheetControl1 As DevExpress.XtraSpreadsheet.SpreadsheetControl
-		Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
-		Private WithEvents button1 As System.Windows.Forms.Button
-		Private WithEvents button2 As System.Windows.Forms.Button
-		Private WithEvents button3 As System.Windows.Forms.Button
-		Private WithEvents button4 As System.Windows.Forms.Button
-		Private WithEvents button5 As System.Windows.Forms.Button
-		Private splitterControl1 As DevExpress.XtraEditors.SplitterControl
-		Private splitContainerControl2 As DevExpress.XtraEditors.SplitContainerControl
-		Private spreadsheetNameBoxControl1 As DevExpress.XtraSpreadsheet.SpreadsheetNameBoxControl
-		Private spreadsheetFormulaBarControl1 As DevExpress.XtraSpreadsheet.SpreadsheetFormulaBarControl
-		Private spreadsheetDockManager1 As DevExpress.XtraSpreadsheet.SpreadsheetDockManager
-		Private WithEvents button6 As System.Windows.Forms.Button
-		Private WithEvents button7 As System.Windows.Forms.Button
-		Private WithEvents btnArrayList As System.Windows.Forms.Button
-	End Class
+        Private spreadsheetControl1 As DevExpress.XtraSpreadsheet.SpreadsheetControl
+        Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+        Private WithEvents btnImportDataTable As DevExpress.XtraEditors.SimpleButton
+        Private WithEvents btnImportArray As DevExpress.XtraEditors.SimpleButton
+        Private WithEvents btnImportList As DevExpress.XtraEditors.SimpleButton
+        Private WithEvents btnImportObject As DevExpress.XtraEditors.SimpleButton
+        Private WithEvents btnUseOptions As DevExpress.XtraEditors.SimpleButton
+        Private spreadsheetDockManager1 As DevExpress.XtraSpreadsheet.SpreadsheetDockManager
+        Private WithEvents btnUseFields As DevExpress.XtraEditors.SimpleButton
+        Private WithEvents btnUseConverter As DevExpress.XtraEditors.SimpleButton
+        Private WithEvents btnImportArrayList As DevExpress.XtraEditors.SimpleButton
+        Friend WithEvents SplitterControl1 As DevExpress.XtraEditors.SplitterControl
+        Friend WithEvents SpreadsheetFormulaBar1 As DevExpress.XtraSpreadsheet.SpreadsheetFormulaBar
+    End Class
 End Namespace
 

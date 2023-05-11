@@ -26,188 +26,173 @@
             this.components = new System.ComponentModel.Container();
             this.spreadsheetControl1 = new DevExpress.XtraSpreadsheet.SpreadsheetControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.btnArrayList = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImportArrayList = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUseConverter = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUseFields = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUseOptions = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImportObject = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImportList = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImportArray = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImportDataTable = new DevExpress.XtraEditors.SimpleButton();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.spreadsheetNameBoxControl1 = new DevExpress.XtraSpreadsheet.SpreadsheetNameBoxControl();
-            this.spreadsheetFormulaBarControl1 = new DevExpress.XtraSpreadsheet.SpreadsheetFormulaBarControl();
+            this.spreadsheetFormulaBar1 = new DevExpress.XtraSpreadsheet.SpreadsheetFormulaBar();
             this.spreadsheetDockManager1 = new DevExpress.XtraSpreadsheet.SpreadsheetDockManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
-            this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spreadsheetNameBoxControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetDockManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // spreadsheetControl1
             // 
             this.spreadsheetControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spreadsheetControl1.Location = new System.Drawing.Point(0, 25);
+            this.spreadsheetControl1.Location = new System.Drawing.Point(0, 40);
+            this.spreadsheetControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.spreadsheetControl1.Name = "spreadsheetControl1";
             this.spreadsheetControl1.Options.Export.Csv.Culture = new System.Globalization.CultureInfo("");
             this.spreadsheetControl1.Options.Export.Txt.Culture = new System.Globalization.CultureInfo("");
             this.spreadsheetControl1.Options.Export.Txt.ValueSeparator = ',';
             this.spreadsheetControl1.Options.Import.Csv.Culture = new System.Globalization.CultureInfo("");
             this.spreadsheetControl1.Options.Import.Txt.Culture = new System.Globalization.CultureInfo("");
-            this.spreadsheetControl1.Size = new System.Drawing.Size(575, 451);
+            this.spreadsheetControl1.Size = new System.Drawing.Size(784, 546);
             this.spreadsheetControl1.TabIndex = 0;
             this.spreadsheetControl1.Text = "spreadsheetControl1";
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.IsSplitterFixed = true;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnArrayList);
-            this.splitContainerControl1.Panel1.Controls.Add(this.button7);
-            this.splitContainerControl1.Panel1.Controls.Add(this.button6);
-            this.splitContainerControl1.Panel1.Controls.Add(this.button5);
-            this.splitContainerControl1.Panel1.Controls.Add(this.button4);
-            this.splitContainerControl1.Panel1.Controls.Add(this.button3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.button2);
-            this.splitContainerControl1.Panel1.Controls.Add(this.button1);
+            // 
+            // splitContainerControl1.Panel1
+            // 
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnImportArrayList);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnUseConverter);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnUseFields);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnUseOptions);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnImportObject);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnImportList);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnImportArray);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnImportDataTable);
             this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
             this.splitContainerControl1.Panel2.Controls.Add(this.spreadsheetControl1);
             this.splitContainerControl1.Panel2.Controls.Add(this.splitterControl1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
+            this.splitContainerControl1.Panel2.Controls.Add(this.spreadsheetFormulaBar1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(724, 476);
-            this.splitContainerControl1.SplitterPosition = 144;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1088, 586);
+            this.splitContainerControl1.SplitterPosition = 292;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // btnArrayList
+            // btnImportArrayList
             // 
-            this.btnArrayList.Location = new System.Drawing.Point(3, 122);
-            this.btnArrayList.Name = "btnArrayList";
-            this.btnArrayList.Size = new System.Drawing.Size(134, 23);
-            this.btnArrayList.TabIndex = 7;
-            this.btnArrayList.Text = "Import ArrayList";
-            this.btnArrayList.UseVisualStyleBackColor = true;
-            this.btnArrayList.Click += new System.EventHandler(this.btnArrayList_Click);
+            this.btnImportArrayList.Location = new System.Drawing.Point(6, 235);
+            this.btnImportArrayList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnImportArrayList.Name = "btnImportArrayList";
+            this.btnImportArrayList.Size = new System.Drawing.Size(280, 44);
+            this.btnImportArrayList.TabIndex = 7;
+            this.btnImportArrayList.Text = "Import ArrayList";
+            this.btnImportArrayList.Click += new System.EventHandler(this.btnArrayList_Click);
             // 
-            // button7
+            // btnUseConverter
             // 
-            this.button7.Location = new System.Drawing.Point(3, 209);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(134, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Import Using Converter";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnUseConverter.Location = new System.Drawing.Point(6, 401);
+            this.btnUseConverter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUseConverter.Name = "btnUseConverter";
+            this.btnUseConverter.Size = new System.Drawing.Size(280, 44);
+            this.btnUseConverter.TabIndex = 6;
+            this.btnUseConverter.Text = "Import Using Converter";
+            this.btnUseConverter.Click += new System.EventHandler(this.btnUseConverter_Click);
             // 
-            // button6
+            // btnUseFields
             // 
-            this.button6.Location = new System.Drawing.Point(3, 180);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(134, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Import Specified Fields";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnUseFields.Location = new System.Drawing.Point(6, 348);
+            this.btnUseFields.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUseFields.Name = "btnUseFields";
+            this.btnUseFields.Size = new System.Drawing.Size(280, 44);
+            this.btnUseFields.TabIndex = 5;
+            this.btnUseFields.Text = "Import Specified Fields";
+            this.btnUseFields.Click += new System.EventHandler(this.btnUseFields_Click);
             // 
-            // button5
+            // btnUseOptions
             // 
-            this.button5.Location = new System.Drawing.Point(3, 151);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Import Using Options";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnUseOptions.Location = new System.Drawing.Point(6, 290);
+            this.btnUseOptions.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUseOptions.Name = "btnUseOptions";
+            this.btnUseOptions.Size = new System.Drawing.Size(280, 44);
+            this.btnUseOptions.TabIndex = 4;
+            this.btnUseOptions.Text = "Import Using Options";
+            this.btnUseOptions.Click += new System.EventHandler(this.btnUseOptions_Click);
             // 
-            // button4
+            // btnImportObject
             // 
-            this.button4.Location = new System.Drawing.Point(3, 93);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Import Object";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnImportObject.Location = new System.Drawing.Point(6, 178);
+            this.btnImportObject.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnImportObject.Name = "btnImportObject";
+            this.btnImportObject.Size = new System.Drawing.Size(280, 44);
+            this.btnImportObject.TabIndex = 3;
+            this.btnImportObject.Text = "Import Object";
+            this.btnImportObject.Click += new System.EventHandler(this.btnImportObject_Click);
             // 
-            // button3
+            // btnImportList
             // 
-            this.button3.Location = new System.Drawing.Point(3, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Import List";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnImportList.Location = new System.Drawing.Point(6, 124);
+            this.btnImportList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnImportList.Name = "btnImportList";
+            this.btnImportList.Size = new System.Drawing.Size(280, 44);
+            this.btnImportList.TabIndex = 2;
+            this.btnImportList.Text = "Import List";
+            this.btnImportList.Click += new System.EventHandler(this.btnImportList_Click);
             // 
-            // button2
+            // btnImportArray
             // 
-            this.button2.Location = new System.Drawing.Point(3, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Import Arrays";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnImportArray.Location = new System.Drawing.Point(6, 68);
+            this.btnImportArray.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnImportArray.Name = "btnImportArray";
+            this.btnImportArray.Size = new System.Drawing.Size(280, 44);
+            this.btnImportArray.TabIndex = 1;
+            this.btnImportArray.Text = "Import Arrays";
+            this.btnImportArray.Click += new System.EventHandler(this.btnImportArray_Click);
             // 
-            // button1
+            // btnImportDataTable
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Import DataTable";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnImportDataTable.Location = new System.Drawing.Point(6, 6);
+            this.btnImportDataTable.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnImportDataTable.Name = "btnImportDataTable";
+            this.btnImportDataTable.Size = new System.Drawing.Size(280, 50);
+            this.btnImportDataTable.TabIndex = 0;
+            this.btnImportDataTable.Text = "Import DataTable";
+            this.btnImportDataTable.Click += new System.EventHandler(this.btnImportDataTable_Click);
             // 
             // splitterControl1
             // 
             this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl1.Location = new System.Drawing.Point(0, 20);
+            this.splitterControl1.Location = new System.Drawing.Point(0, 28);
+            this.splitterControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.splitterControl1.MinSize = 20;
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(575, 5);
+            this.splitterControl1.Size = new System.Drawing.Size(784, 12);
             this.splitterControl1.TabIndex = 1;
             this.splitterControl1.TabStop = false;
             // 
-            // splitContainerControl2
+            // spreadsheetFormulaBar1
             // 
-            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl2.MinimumSize = new System.Drawing.Size(0, 20);
-            this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.spreadsheetNameBoxControl1);
-            this.splitContainerControl2.Panel2.Controls.Add(this.spreadsheetFormulaBarControl1);
-            this.splitContainerControl2.Size = new System.Drawing.Size(575, 20);
-            this.splitContainerControl2.SplitterPosition = 145;
-            this.splitContainerControl2.TabIndex = 2;
-            // 
-            // spreadsheetNameBoxControl1
-            // 
-            this.spreadsheetNameBoxControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spreadsheetNameBoxControl1.EditValue = "A1";
-            this.spreadsheetNameBoxControl1.Location = new System.Drawing.Point(0, 0);
-            this.spreadsheetNameBoxControl1.MinimumSize = new System.Drawing.Size(0, 20);
-            this.spreadsheetNameBoxControl1.Name = "spreadsheetNameBoxControl1";
-            this.spreadsheetNameBoxControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spreadsheetNameBoxControl1.Size = new System.Drawing.Size(145, 20);
-            this.spreadsheetNameBoxControl1.SpreadsheetControl = this.spreadsheetControl1;
-            this.spreadsheetNameBoxControl1.TabIndex = 0;
-            // 
-            // spreadsheetFormulaBarControl1
-            // 
-            this.spreadsheetFormulaBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spreadsheetFormulaBarControl1.Location = new System.Drawing.Point(0, 0);
-            this.spreadsheetFormulaBarControl1.MinimumSize = new System.Drawing.Size(0, 20);
-            this.spreadsheetFormulaBarControl1.Name = "spreadsheetFormulaBarControl1";
-            this.spreadsheetFormulaBarControl1.Size = new System.Drawing.Size(425, 20);
-            this.spreadsheetFormulaBarControl1.SpreadsheetControl = this.spreadsheetControl1;
-            this.spreadsheetFormulaBarControl1.TabIndex = 0;
+            this.spreadsheetFormulaBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.spreadsheetFormulaBar1.Location = new System.Drawing.Point(0, 0);
+            this.spreadsheetFormulaBar1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.spreadsheetFormulaBar1.MinimumSize = new System.Drawing.Size(0, 28);
+            this.spreadsheetFormulaBar1.Name = "spreadsheetFormulaBar1";
+            this.spreadsheetFormulaBar1.Size = new System.Drawing.Size(784, 28);
+            this.spreadsheetFormulaBar1.SpreadsheetControl = this.spreadsheetControl1;
+            this.spreadsheetFormulaBar1.TabIndex = 2;
             // 
             // spreadsheetDockManager1
             // 
@@ -226,17 +211,19 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 476);
+            this.ClientSize = new System.Drawing.Size(1088, 586);
             this.Controls.Add(this.splitContainerControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
-            this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.spreadsheetNameBoxControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetDockManager1)).EndInit();
             this.ResumeLayout(false);
 
@@ -246,19 +233,17 @@
 
         private DevExpress.XtraSpreadsheet.SpreadsheetControl spreadsheetControl1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private DevExpress.XtraEditors.SplitterControl splitterControl1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraSpreadsheet.SpreadsheetNameBoxControl spreadsheetNameBoxControl1;
-        private DevExpress.XtraSpreadsheet.SpreadsheetFormulaBarControl spreadsheetFormulaBarControl1;
+        private DevExpress.XtraEditors.SimpleButton btnImportDataTable;
+        private DevExpress.XtraEditors.SimpleButton btnImportArray;
+        private DevExpress.XtraEditors.SimpleButton btnImportList;
+        private DevExpress.XtraEditors.SimpleButton btnImportObject;
+        private DevExpress.XtraEditors.SimpleButton btnUseOptions;
         private DevExpress.XtraSpreadsheet.SpreadsheetDockManager spreadsheetDockManager1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button btnArrayList;
+        private DevExpress.XtraEditors.SimpleButton btnUseFields;
+        private DevExpress.XtraEditors.SimpleButton btnUseConverter;
+        private DevExpress.XtraEditors.SimpleButton btnImportArrayList;
+        private DevExpress.XtraEditors.SplitterControl splitterControl1;
+        private DevExpress.XtraSpreadsheet.SpreadsheetFormulaBar spreadsheetFormulaBar1;
     }
 }
 
