@@ -25,7 +25,7 @@ namespace DataImportExample
                 Worksheet worksheet = workbook.Worksheets[0];
                 worksheet.Clear(worksheet.GetUsedRange());
                 ImportDataTable(worksheet);
-                CreateTable(worksheet);
+                //CreateTable(worksheet);
             }
             finally
             {
@@ -206,16 +206,17 @@ namespace DataImportExample
             };
 
 
-            List<byte[]> images = new List<byte[]>
+            List<byte[]> imageList = new List<byte[]>();
             {
-                imageBytes1,
-                imageBytes2,
-
+                imageList.Add(imageBytes1);
+                imageList.Add(imageBytes2);
             };
 
             // Import the list into the worksheet and insert it vertically, starting with the B1 cell.
             worksheet.Import(cities, 0, 1, true);
-            worksheet.Import(images, 2, 1);
+
+            // Import the image list into the worksheet and insert it vertically
+            worksheet.Import(imageList, 0, 2, true, new DataImportOptions());
         }
         #endregion #ImportList
 
