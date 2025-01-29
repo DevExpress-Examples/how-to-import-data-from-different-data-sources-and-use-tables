@@ -22,9 +22,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Document.Processor" Version="24.2.5-pre-25029" />
-    <PackageReference Include="DevExpress.Drawing.Skia" Version="24.2.5-pre-25029" />
-    <PackageReference Include="DevExpress.Win" Version="24.2.5-pre-25029" />
+    <PackageReference Include="DevExpress.Document.Processor" Version="24.2.4" />
+    <PackageReference Include="DevExpress.Drawing.Skia" Version="24.2.4" />
+    <PackageReference Include="DevExpress.Win" Version="24.2.4" />
     <PackageReference Include="Microsoft.CSharp" />
     <PackageReference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
