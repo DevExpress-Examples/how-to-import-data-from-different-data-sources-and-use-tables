@@ -90,10 +90,11 @@ Namespace DataImportExample
 			sourceTable.Columns.Add("Price", GetType(Single))
 			sourceTable.Columns.Add("Quantity", GetType(Int32))
 			sourceTable.Columns.Add("Discount", GetType(Single))
+			sourceTable.Columns.Add("Image", GetType(Byte()))
 
-			sourceTable.Rows.Add("Chocolade", 5, 15, 0.03)
-			sourceTable.Rows.Add("Konbu", 9, 55, 0.1)
-			sourceTable.Rows.Add("Geitost", 15, 70, 0.07)
+			sourceTable.Rows.Add("Chocolade", 5, 15, 0.03, imageBytes1)
+			sourceTable.Rows.Add("Konbu", 9, 55, 0.1, imageBytes1)
+			sourceTable.Rows.Add("Geitost", 15, 70, 0.07, imageBytes2)
 
 			' Import data from the data table into the worksheet and insert it, starting with the B2 cell.
 			worksheet.Import(sourceTable, True, 1, 1)
@@ -104,7 +105,7 @@ Namespace DataImportExample
 		#Region "#CreateTable"
 		Private Sub CreateTable(ByVal worksheet As Worksheet)
 			' Insert a table in the worksheet.
-			Dim table As Table = worksheet.Tables.Add(worksheet("B2:F5"), True)
+			Dim table As Table = worksheet.Tables.Add(worksheet("B2:G5"), True)
 
 			' Format the table by applying a built-in table style.
 			table.Style = worksheet.Workbook.TableStyles(BuiltInTableStyleId.TableStyleMedium27)
@@ -114,7 +115,8 @@ Namespace DataImportExample
 			Dim priceColumn As TableColumn = table.Columns(1)
 			Dim quantityColumn As TableColumn = table.Columns(2)
 			Dim discountColumn As TableColumn = table.Columns(3)
-			Dim amountColumn As TableColumn = table.Columns(4)
+			Dim imageColumn As TableColumn = table.Columns(4)
+			Dim amountColumn As TableColumn = table.Columns(5)
 
 			' Set the name of the last column. 
 			amountColumn.Name = "Amount"

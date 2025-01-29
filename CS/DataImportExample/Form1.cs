@@ -108,10 +108,11 @@ namespace DataImportExample
             sourceTable.Columns.Add("Price", typeof(float));
             sourceTable.Columns.Add("Quantity", typeof(Int32));
             sourceTable.Columns.Add("Discount", typeof(float));
+            sourceTable.Columns.Add("Image", typeof(byte[]));
 
-            sourceTable.Rows.Add("Chocolade", 5, 15, 0.03);
-            sourceTable.Rows.Add("Konbu", 9, 55, 0.1);
-            sourceTable.Rows.Add("Geitost", 15, 70, 0.07);
+            sourceTable.Rows.Add("Chocolade", 5, 15, 0.03, imageBytes1);
+            sourceTable.Rows.Add("Konbu", 9, 55, 0.1, imageBytes1);
+            sourceTable.Rows.Add("Geitost", 15, 70, 0.07, imageBytes2);
 
             // Import data from the data table into the worksheet and insert it, starting with the B2 cell.
             worksheet.Import(sourceTable, true, 1, 1);
@@ -123,7 +124,7 @@ namespace DataImportExample
         void CreateTable(Worksheet worksheet)
         {
             // Insert a table in the worksheet.
-            Table table = worksheet.Tables.Add(worksheet["B2:F5"], true);
+            Table table = worksheet.Tables.Add(worksheet["B2:G5"], true);
 
             // Format the table by applying a built-in table style.
             table.Style = worksheet.Workbook.TableStyles[BuiltInTableStyleId.TableStyleMedium27];
@@ -133,7 +134,8 @@ namespace DataImportExample
             TableColumn priceColumn = table.Columns[1];
             TableColumn quantityColumn = table.Columns[2];
             TableColumn discountColumn = table.Columns[3];
-            TableColumn amountColumn = table.Columns[4];
+            TableColumn imageColumn = table.Columns[4];
+            TableColumn amountColumn = table.Columns[5];
 
             // Set the name of the last column. 
             amountColumn.Name = "Amount";
