@@ -222,13 +222,13 @@ namespace DataImportExample
         #region #ImportArrayList
         void ImportArrayList(Worksheet worksheet)
         {
-            System.Collections.ArrayList listDataSource =
-            [
+            System.Collections.ArrayList listDataSource = new System.Collections.ArrayList()
+            {
                 new TestObject(1, "Jane", true, imageBytes1),
                 new TestObject(2, "Joe", false, imageBytes2),
                 new TestObject(3, "Bill", true, imageBytes1),
                 new TestObject(4, "Michael", false, imageBytes2),
-            ];
+            };
             worksheet.Import(listDataSource, 0, 0);
         }
         #endregion #ImportArrayList
@@ -274,7 +274,7 @@ namespace DataImportExample
             Worksheet worksheet = workbook.Worksheets[0];
             worksheet.Clear(worksheet.GetUsedRange());
 
-            List<TestObject> list = [new TestObject(1, "1", true, imageBytes1), new TestObject(2, "2", false, imageBytes2)];
+            List<TestObject> list = new List<TestObject> { new TestObject(1, "1", true, imageBytes1), new TestObject(2, "2", false, imageBytes2) };
             worksheet.Import(list, 0, 0, new DataSourceImportOptions() { PropertyNames = new string[] { "BoolValue", "ImageValue" } });
             workbook.SaveDocument("result.xlsx");
             Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
@@ -291,9 +291,10 @@ namespace DataImportExample
             string imageBase64 = Convert.ToBase64String(imageBytes1);
 
             List<TestObject> list = [new TestObject(1, "1", true, imageBase64), new TestObject(2, "2", false, imageBase64)];
-            worksheet.Import(list, 0, 0, new DataSourceImportOptions() { 
-                Converter = new TestDataValueConverter(), 
-                PropertyNames = new string[] { "IntValue", "Value", "BoolValue", "ImageBase64" } 
+            worksheet.Import(list, 0, 0, new DataSourceImportOptions()
+            {
+                Converter = new TestDataValueConverter(),
+                PropertyNames = new string[] { "IntValue", "Value", "BoolValue", "ImageBase64" }
             });
 
             workbook.SaveDocument("result.xlsx");
