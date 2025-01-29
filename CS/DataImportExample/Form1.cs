@@ -1,78 +1,107 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using DevExpress.Spreadsheet;
+﻿using DevExpress.Spreadsheet;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.IO;
 
-namespace DataImportExample {
+namespace DataImportExample
+{
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
-        public Form1() {
+        byte[] imageBytes1 = File.ReadAllBytes("images//img.png");
+        byte[] imageBytes2 = File.ReadAllBytes("images//x-docserver.png");
+        public Form1()
+        {
             InitializeComponent();
         }
 
-        private void btnImportDataTable_Click(object sender, EventArgs e) {
-            spreadsheetControl1.Document.BeginUpdate();
-            try {
-                Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
+        private void btnImportDataTable_Click(object sender, EventArgs e)
+        {
+            Workbook workbook = new Workbook();
+            workbook.BeginUpdate();
+            try
+            {
+                Worksheet worksheet = workbook.Worksheets[0];
                 worksheet.Clear(worksheet.GetUsedRange());
-                ImportDataTable();
-                CreateTable();
+                ImportDataTable(worksheet);
+                CreateTable(worksheet);
             }
-            finally {
-                spreadsheetControl1.Document.EndUpdate();
+            finally
+            {
+                workbook.EndUpdate();
+                workbook.SaveDocument("result.xlsx");
+                Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
             }
+            workbook.Dispose();
         }
 
-        private void btnImportArray_Click(object sender, EventArgs e) {
-            spreadsheetControl1.Document.BeginUpdate();
-            try {
-                Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
+        private void btnImportArray_Click(object sender, EventArgs e)
+        {
+            Workbook workbook = new Workbook();
+            workbook.BeginUpdate();
+            try
+            {
+                Worksheet worksheet = workbook.Worksheets[0];
                 worksheet.Clear(worksheet.GetUsedRange());
                 worksheet.Cells["A1"].ColumnWidthInCharacters = 35;
                 worksheet.Cells["A1"].Value = "Import an array horizontally:";
                 worksheet.Cells["A3"].Value = "Import a two-dimensional array:";
-                ImportArrays();
+                worksheet.Cells["A5"].Value = "Import image data:";
+                ImportArrays(worksheet);
             }
-            finally {
-                spreadsheetControl1.Document.EndUpdate();
-            }   
+            finally
+            {
+                workbook.EndUpdate();
+                workbook.SaveDocument("result.xlsx");
+                Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
+            }
+            workbook.Dispose();
         }
 
-        private void btnImportList_Click(object sender, EventArgs e) {
-            spreadsheetControl1.Document.BeginUpdate();
-            try {
-                Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
+        private void btnImportList_Click(object sender, EventArgs e)
+        {
+            Workbook workbook = new Workbook();
+            workbook.BeginUpdate();
+            try
+            {
+                Worksheet worksheet = workbook.Worksheets[0];
                 worksheet.Clear(worksheet.GetUsedRange());
                 worksheet.Cells["A1"].ColumnWidthInCharacters = 35;
                 worksheet.Cells["A1"].Value = "Import data from List vertically:";
-                ImportList();
+                ImportList(worksheet);
             }
-            finally {
-                spreadsheetControl1.Document.EndUpdate();
+            finally
+            {
+                workbook.EndUpdate();
+                workbook.SaveDocument("result.xlsx");
+                Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
             }
+            workbook.Dispose();
         }
 
         private void btnArrayList_Click(object sender, EventArgs e)
         {
-            spreadsheetControl1.Document.BeginUpdate();
+            Workbook workbook = new Workbook();
+            workbook.BeginUpdate();
             try
             {
-                Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
+                Worksheet worksheet = workbook.Worksheets[0];
                 worksheet.Clear(worksheet.GetUsedRange());
-                ImportArrayList();
+                ImportArrayList(worksheet);
             }
             finally
             {
-                spreadsheetControl1.Document.EndUpdate();
+                workbook.EndUpdate();
+                workbook.SaveDocument("result.xlsx");
+                Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
+
             }
         }
 
         #region #ImportDataTable
-        void ImportDataTable() {
-
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-
+        void ImportDataTable(Worksheet worksheet)
+        {
             // Create a "Products" DataTable object with four columns.
             DataTable sourceTable = new DataTable("Products");
             sourceTable.Columns.Add("Product", typeof(string));
@@ -86,19 +115,18 @@ namespace DataImportExample {
 
             // Import data from the data table into the worksheet and insert it, starting with the B2 cell.
             worksheet.Import(sourceTable, true, 1, 1);
+
         }
         #endregion #ImportDataTable
 
         #region #CreateTable
-        void CreateTable() {
-
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-
+        void CreateTable(Worksheet worksheet)
+        {
             // Insert a table in the worksheet.
             Table table = worksheet.Tables.Add(worksheet["B2:F5"], true);
 
             // Format the table by applying a built-in table style.
-            table.Style = spreadsheetControl1.Document.TableStyles[BuiltInTableStyleId.TableStyleMedium27];
+            table.Style = worksheet.Workbook.TableStyles[BuiltInTableStyleId.TableStyleMedium27];
 
             // Access table columns.
             TableColumn productColumn = table.Columns[0];
@@ -131,7 +159,8 @@ namespace DataImportExample {
             table.TotalRowRange.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
 
             // Specify horizontal alignment to display data in all columns except the first one.
-            for (int i = 1; i < table.Columns.Count; i++) {
+            for (int i = 1; i < table.Columns.Count; i++)
+            {
                 table.Columns[i].DataRange.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
             }
 
@@ -140,10 +169,9 @@ namespace DataImportExample {
         }
         #endregion #CreateTable
 
-
-        void ImportArrays() {
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-            #region #ImportArrays
+        #region #ImportArrays
+        void ImportArrays(Worksheet worksheet)
+        {
             // Create an array containing string values.
             string[] array = new string[] { "AAA", "BBB", "CCC", "DDD" };
 
@@ -158,82 +186,116 @@ namespace DataImportExample {
 
             // Import the two-dimensional array into the worksheet and insert it, starting with the B3 cell.
             worksheet.Import(names, 2, 1);
-            #endregion #ImportArrays
-        }
 
-        void ImportList() {
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-            #region #ImportList
+
+        }
+        #endregion #ImportArrays
+
+        #region #ImportList
+        void ImportList(Worksheet worksheet)
+        {
             // Create a List object containing string values.
-            List<string> cities = new List<string>();
-            cities.Add("New York");
-            cities.Add("Rome");
-            cities.Add("Beijing");
-            cities.Add("Delhi");
+            List<string> cities = new List<string>
+            {
+                "New York",
+                "Rome",
+                "Beijing",
+                "Delhi"
+            };
+
+
+            List<byte[]> images = new List<byte[]>
+            {
+                imageBytes1,
+                imageBytes2,
+
+            };
 
             // Import the list into the worksheet and insert it vertically, starting with the B1 cell.
             worksheet.Import(cities, 0, 1, true);
-            #endregion #ImportList
+            worksheet.Import(images, 2, 1);
         }
+        #endregion #ImportList
 
-        void ImportArrayList()
+        #region #ImportArrayList
+        void ImportArrayList(Worksheet worksheet)
         {
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-            #region #ImportArrayList
-            System.Collections.ArrayList listDataSource = new System.Collections.ArrayList();
-            listDataSource.Add(new TestObject(1, "Jane", true));
-            listDataSource.Add(new TestObject(2, "Joe", false));
-            listDataSource.Add(new TestObject(3, "Bill", true));
-            listDataSource.Add(new TestObject(4, "Michael", false));
+            System.Collections.ArrayList listDataSource =
+            [
+                new TestObject(1, "Jane", true, imageBytes1),
+                new TestObject(2, "Joe", false, imageBytes2),
+                new TestObject(3, "Bill", true, imageBytes1),
+                new TestObject(4, "Michael", false, imageBytes2),
+            ];
             worksheet.Import(listDataSource, 0, 0);
-            #endregion #ImportArrayList
         }
+        #endregion #ImportArrayList
+
 
         private void btnImportObject_Click(object sender, EventArgs e)
         {
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-            worksheet.Clear(worksheet.GetUsedRange());
             #region #ImportObject
-            worksheet.Import(new TestObject(1, "1", true), 0, 0);
+            Workbook workbook = new Workbook();
+            var worksheet = workbook.Worksheets[0];
+            worksheet.Clear(worksheet.GetUsedRange());
+
+            worksheet.Import(new TestObject(1, "1", true, imageBytes1), 0, 0);
+
+            workbook.SaveDocument("result.xlsx");
+            Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
             #endregion #ImportObject
         }
 
 
         private void btnUseOptions_Click(object sender, EventArgs e)
         {
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-            worksheet.Clear(worksheet.GetUsedRange());
             #region #ImportUsingOptions
+            Workbook workbook = new Workbook();
+            Worksheet worksheet = workbook.Worksheets[0];
+            worksheet.Clear(worksheet.GetUsedRange());
+
             string[] arrayR1C1 = new string[] { "a", "b", "=R1C1&R1C2" };
             worksheet.Import(arrayR1C1, 0, 0, false, new DataImportOptions() { ImportFormulas = true, ReferenceStyle = ReferenceStyle.R1C1 });
-            
+
             string[] arrayLocalized = new string[] { "a", "=1,2+1" };
-            worksheet.Import(arrayLocalized, 1, 0, false, 
+            worksheet.Import(arrayLocalized, 1, 0, false,
                 new DataImportOptions() { ImportFormulas = true, FormulaCulture = new System.Globalization.CultureInfo("de-DE") });
+            workbook.SaveDocument("result.xlsx");
+            Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
             #endregion #ImportUsingOptions
         }
 
         private void btnUseFields_Click(object sender, EventArgs e)
         {
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-            worksheet.Clear(worksheet.GetUsedRange());
             #region #ImportSpecifiedFields
-            List<TestObject> list = new List<TestObject>();
-            list.Add(new TestObject(1, "1", true));
-            list.Add(new TestObject(2, "2", false));
-            worksheet.Import(list, 0, 0, new DataSourceImportOptions() { PropertyNames = new string[] { "BoolValue", "IntValue" } });
+            Workbook workbook = new Workbook();
+            Worksheet worksheet = workbook.Worksheets[0];
+            worksheet.Clear(worksheet.GetUsedRange());
+
+            List<TestObject> list = [new TestObject(1, "1", true, imageBytes1), new TestObject(2, "2", false, imageBytes2)];
+            worksheet.Import(list, 0, 0, new DataSourceImportOptions() { PropertyNames = new string[] { "BoolValue", "ImageValue" } });
+            workbook.SaveDocument("result.xlsx");
+            Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
             #endregion #ImportSpecifiedFields
         }
 
         private void btnUseConverter_Click(object sender, EventArgs e)
         {
-            Worksheet worksheet = spreadsheetControl1.Document.Worksheets[0];
-            worksheet.Clear(worksheet.GetUsedRange());
             #region #ImportUsingConverter
-            List<TestObject> list = new List<TestObject>();
-            list.Add(new TestObject(1, "1", true));
-            list.Add(new TestObject(2, "2", false));
-            worksheet.Import(list, 0, 0, new DataSourceImportOptions() { Converter = new TestDataValueConverter() });
+            Workbook workbook = new Workbook();
+            Worksheet worksheet = workbook.Worksheets[0];
+            worksheet.Clear(worksheet.GetUsedRange());
+
+            string imageBase64 = Convert.ToBase64String(imageBytes1);
+
+            List<TestObject> list = [new TestObject(1, "1", true, imageBase64), new TestObject(2, "2", false, imageBase64)];
+            worksheet.Import(list, 0, 0, new DataSourceImportOptions() { 
+                Converter = new TestDataValueConverter(), 
+                PropertyNames = new string[] { "IntValue", "Value", "BoolValue", "ImageBase64" } 
+            });
+
+            workbook.SaveDocument("result.xlsx");
+            Process.Start(new ProcessStartInfo("result.xlsx") { UseShellExecute = true });
             #endregion #ImportUsingConverter
         }
     }

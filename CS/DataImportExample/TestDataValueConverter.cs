@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Drawing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,20 +11,36 @@ namespace DataImportExample
     {
         public bool TryConvert(object value, int columnIndex, out DevExpress.Spreadsheet.CellValue result)
         {
-            string strValue = value as string;
-            if (strValue != null)
+            switch (value)
             {
-                int str2int;
-                bool success = Int32.TryParse(strValue, out str2int);
-                result = success ? str2int : 0;
-                return true;
+                case string strValue:
+                    try
+                    {
+                        result = DXImage.FromBase64String(strValue);
+                    }
+                    catch
+                    {
+                        int str2int = 0;
+                        if (Int32.TryParse(strValue, out str2int))
+                        {
+                            result = str2int;
+                        }
+                        else
+                        {
+                            result = strValue;
+                        }
+                    }
+                    return true;
+                case int intValue:
+                    result = intValue;
+                    return true;
+                case bool boolValue:
+                    result = boolValue;
+                    return true;
+                default:
+                    result = value == null ? null : value.ToString();
+                    return true;
             }
-            Type valueType = value.GetType();
-            if (valueType == typeof(int))
-                result = (int)value;
-            else
-                result = null;
-            return true;
         }
     }
     #endregion #converter
