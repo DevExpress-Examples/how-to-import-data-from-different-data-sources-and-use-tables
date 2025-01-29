@@ -11,8 +11,6 @@ Namespace DataImportExample
 
 		Public Function TryConvert(ByVal value As Object, ByVal columnIndex As Integer, <System.Runtime.InteropServices.Out()> ByRef result As DevExpress.Spreadsheet.CellValue) As Boolean
 			Select Case value
-'INSTANT VB TODO TASK: VB has no equivalent to C# pattern variables in 'case' statements:
-'ORIGINAL LINE: case string strValue:
 				Case String strValue
 					Try
 						result = DXImage.FromBase64String(strValue)
@@ -25,13 +23,9 @@ Namespace DataImportExample
 						End If
 					End Try
 					Return True
-'INSTANT VB TODO TASK: VB has no equivalent to C# pattern variables in 'case' statements:
-'ORIGINAL LINE: case int intValue:
 				Case Integer intValue
 					result = intValue
 					Return True
-'INSTANT VB TODO TASK: VB has no equivalent to C# pattern variables in 'case' statements:
-'ORIGINAL LINE: case bool boolValue:
 				Case Boolean boolValue
 					result = boolValue
 					Return True
