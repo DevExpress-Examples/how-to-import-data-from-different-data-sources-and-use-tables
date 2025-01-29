@@ -20,8 +20,8 @@ This example illustrates how to use the [Worksheet.Import](https://docs.devexpre
 
 ## Documentation
 
-* [Spreadsheet Tables](https://docs.devexpress.com/WindowsForms/403253/controls-and-libraries/spreadsheet/spreadsheet-tables)
-* [How to: Import Data to a Worksheet](https://docs.devexpress.com/WindowsForms/15442/controls-and-libraries/spreadsheet/examples/data-import-and-export/how-to-import-data-to-a-worksheet)
+* [Spreadsheet Tables](https://docs.devexpress.com/OfficeFileAPI/403308/spreadsheet-document-api/spreadsheet-tables)
+* [How to: Import Data to a Worksheet](https://docs.devexpress.com/OfficeFileAPI/13777/spreadsheet-document-api/examples/data-import-and-export/how-to-import-data-to-a-worksheet)
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
