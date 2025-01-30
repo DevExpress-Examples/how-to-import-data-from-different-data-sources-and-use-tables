@@ -92,7 +92,7 @@ Namespace DataImportExample
             sourceTable.Rows.Add("Konbu", 9, 55, 0.1, imageBytes1)
             sourceTable.Rows.Add("Geitost", 15, 70, 0.07, imageBytes2)
 
-            ' Import data from the data table into the worksheet and insert it, starting with the B2 cell.
+            ' Import data from the data table into the worksheet and insert it, starting with cel0l B2.
             worksheet.Import(sourceTable, True, 1, 1)
         End Sub
 #End Region ' #ImportDataTable
@@ -151,7 +151,7 @@ Namespace DataImportExample
             ' Create an array containing string values.
             Dim array() As String = {"AAA", "BBB", "CCC", "DDD"}
 
-            ' Import the array into the worksheet and insert it horizontally, starting with the B1 cell.
+            ' Import the array into the worksheet and insert it horizontally, starting with cell B1.
             worksheet.Import(array, 0, 1, False)
 
             ' Create a two-dimensional array containing string values.
@@ -160,7 +160,7 @@ Namespace DataImportExample
                 {"Rachel", "Bruce", "Barbara", "George"}
             }
 
-            ' Import the two-dimensional array into the worksheet and insert it, starting with the B3 cell.
+            ' Import the two-dimensional array into the worksheet and insert it, starting with cell B3.
             worksheet.Import(names, 2, 1)
         End Sub
 #End Region ' #ImportArrays
@@ -172,7 +172,7 @@ Namespace DataImportExample
 
             Dim images As New List(Of Byte()) From {imageBytes1, imageBytes2}
 
-            ' Import the list into the worksheet and insert it vertically, starting with the B1 cell.
+            ' Import the list into the worksheet and insert it vertically, starting with cell B1.
             worksheet.Import(cities, 0, 1, True)
             worksheet.Import(images, 2, 1)
         End Sub
@@ -246,7 +246,7 @@ Namespace DataImportExample
         End Sub
 
         Private Sub btnUseConverter_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUseConverter.Click
-            			#Region "#ImportUsingConverter"
+#Region "#ImportUsingConverter"
             Dim workbook As New Workbook()
             Dim worksheet As Worksheet = workbook.Worksheets(0)
             worksheet.Clear(worksheet.GetUsedRange())
@@ -264,7 +264,7 @@ Namespace DataImportExample
 
             workbook.SaveDocument("result.xlsx")
             Process.Start(New ProcessStartInfo("result.xlsx") With {.UseShellExecute = True})
-            			#End Region ' #ImportUsingConverter
+#End Region ' #ImportUsingConverter
         End Sub
     End Class
 End Namespace

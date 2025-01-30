@@ -25,7 +25,7 @@ namespace DataImportExample
                 Worksheet worksheet = workbook.Worksheets[0];
                 worksheet.Clear(worksheet.GetUsedRange());
                 ImportDataTable(worksheet);
-                //CreateTable(worksheet);
+                CreateTable(worksheet);
             }
             finally
             {
@@ -114,7 +114,7 @@ namespace DataImportExample
             sourceTable.Rows.Add("Konbu", 9, 55, 0.1, imageBytes1);
             sourceTable.Rows.Add("Geitost", 15, 70, 0.07, imageBytes2);
 
-            // Import data from the data table into the worksheet and insert it, starting with the B2 cell.
+            // Import data from the data table into the worksheet and insert it, starting with cell B2.
             worksheet.Import(sourceTable, true, 1, 1);
 
         }
@@ -177,7 +177,7 @@ namespace DataImportExample
             // Create an array containing string values.
             string[] array = new string[] { "AAA", "BBB", "CCC", "DDD" };
 
-            // Import the array into the worksheet and insert it horizontally, starting with the B1 cell.
+            // Import the array into the worksheet and insert it horizontally, starting with cell B1.
             worksheet.Import(array, 0, 1, false);
 
             // Create a two-dimensional array containing string values.
@@ -186,7 +186,7 @@ namespace DataImportExample
             {"Rachel", "Bruce", "Barbara", "George"}
                  };
 
-            // Import the two-dimensional array into the worksheet and insert it, starting with the B3 cell.
+            // Import the two-dimensional array into the worksheet and insert it, starting with cell B3.
             worksheet.Import(names, 2, 1);
 
 
@@ -212,7 +212,7 @@ namespace DataImportExample
                 imageList.Add(imageBytes2);
             };
 
-            // Import the list into the worksheet and insert it vertically, starting with the B1 cell.
+            // Import the list into the worksheet and insert it vertically, starting with cell B1.
             worksheet.Import(cities, 0, 1, true);
 
             // Import the image list into the worksheet and insert it vertically
