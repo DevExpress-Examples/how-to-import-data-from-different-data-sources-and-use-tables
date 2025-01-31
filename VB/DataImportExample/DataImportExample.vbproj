@@ -34,7 +34,7 @@
     <PackageReference Include="DevExpress.Drawing.Skia" Version="24.2.4" />
     <PackageReference Include="DevExpress.Win" Version="24.2.4" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.6.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="images\x-docserver.png">
