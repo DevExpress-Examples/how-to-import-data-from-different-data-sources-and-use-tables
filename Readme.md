@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# How to import data to worksheet cells from different data sources
+# Spreadsheet Document API - How to Import Data to a Worksheet from Different Data Sources
 
 This example illustrates how to use the [Worksheet.Import](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Spreadsheet.WorksheetExtensions.Import.overloads) method to import data to worksheet cells from different data sources (arrays, lists and data tables), and how to format a range of cells as a table.
 
