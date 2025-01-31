@@ -46,8 +46,7 @@ namespace DataImportExample
                 worksheet.Clear(worksheet.GetUsedRange());
                 worksheet.Cells["A1"].ColumnWidthInCharacters = 35;
                 worksheet.Cells["A1"].Value = "Import an array horizontally:";
-                worksheet.Cells["A3"].Value = "Import a two-dimensional array:";
-                worksheet.Cells["A5"].Value = "Import image data:";
+                worksheet.Cells["A3"].Value = "Import a two-dimensional array:";                
                 ImportArrays(worksheet);
             }
             finally
