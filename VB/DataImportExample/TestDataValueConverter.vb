@@ -1,39 +1,37 @@
 ﻿Imports DevExpress.Drawing
+Imports DevExpress.Spreadsheet
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
+Imports System.Runtime.InteropServices
 Imports System.Text
-
 Namespace DataImportExample
-	#Region "#converter"
-	Friend Class TestDataValueConverter
-		Implements DevExpress.Spreadsheet.IDataValueConverter
+#Region "#converter"
+    Friend Class TestDataValueConverter
+        Implements IDataValueConverter
+        Private Function IDataValueConverter_TryConvert(value As Object, index As Integer, ByRef result As CellValue) As Boolean Implements IDataValueConverter.TryConvert
+            If TypeOf value Is String Then
+                Dim strValue As String = TryCast(value, String)
 
-		Public Function TryConvert(ByVal value As Object, ByVal columnIndex As Integer, <System.Runtime.InteropServices.Out()> ByRef result As DevExpress.Spreadsheet.CellValue) As Boolean
-			Select Case value
-				Case String strValue
-					Try
-						result = DXImage.FromBase64String(strValue)
-					Catch
-						Dim str2int As Integer = 0
-						If Int32.TryParse(strValue, str2int) Then
-							result = str2int
-						Else
-							result = strValue
-						End If
-					End Try
-					Return True
-				Case Integer intValue
-					result = intValue
-					Return True
-				Case Boolean boolValue
-					result = boolValue
-					Return True
-				Case Else
-					result = If(value Is Nothing, Nothing, value.ToString())
-					Return True
-			End Select
-		End Function
-	End Class
-	#End Region ' #converter
+                Try
+                    result = DXImage.FromBase64String(strValue)
+                Catch
+                    Dim str2int As Integer = 0
+
+                    If Int32.TryParse(strValue, str2int) Then
+                        result = str2int
+                    Else
+                        result = strValue
+                    End If
+                End Try
+
+                Return True
+            End If
+
+            result = DevExpress.Spreadsheet.CellValue.TryCreateFromObject(value)
+            Return True
+        End Function
+
+    End Class
+#End Region ' #converter
 End Namespace
