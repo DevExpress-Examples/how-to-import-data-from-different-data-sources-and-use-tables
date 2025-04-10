@@ -9,11 +9,10 @@ namespace DataImportExample
     #region #converter
     class TestDataValueConverter : DevExpress.Spreadsheet.IDataValueConverter
     {
-        public bool TryConvert(object value, int columnIndex, out DevExpress.Spreadsheet.CellValue result)
-        {
-            switch (value)
-            {
-                case string strValue:
+        private bool IDataValueConverter_TryConvert(object value, int index, ref CellValue result) {
+                if (value is string) {
+                    string strValue = value as string;
+        
                     try
                     {
                         result = DXImage.FromBase64String(strValue);
@@ -21,26 +20,16 @@ namespace DataImportExample
                     catch
                     {
                         int str2int = 0;
-                        if (Int32.TryParse(strValue, out str2int))
-                        {
+        
+                        if (Int32.TryParse(strValue, ref str2int))
                             result = str2int;
-                        }
                         else
-                        {
                             result = strValue;
-                        }
                     }
                     return true;
-                case int intValue:
-                    result = intValue;
-                    return true;
-                case bool boolValue:
-                    result = boolValue;
-                    return true;
-                default:
-                    result = value == null ? null : value.ToString();
-                    return true;
-            }
+                }        
+                result = DevExpress.Spreadsheet.CellValue.TryCreateFromObject(value);
+                return true;
         }
     }
     #endregion #converter
