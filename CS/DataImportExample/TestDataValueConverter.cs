@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DevExpres.Spreadsheet;
 
 namespace DataImportExample
 {
     #region #converter
     class TestDataValueConverter : DevExpress.Spreadsheet.IDataValueConverter
     {
-        private bool IDataValueConverter_TryConvert(object value, int index, ref DevExpress.Spreadsheet.CellValue result) {
+        private bool IDataValueConverter_TryConvert(object value, int index, ref CellValue result) {
                 if (value is string) {
                     string strValue = value as string;
         
