@@ -25,7 +25,7 @@ This example illustrates how to use the [Worksheet.Import](https://docs.devexpre
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
-[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-import-data-from-different-data-sources-and-use-tables&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-import-data-from-different-data-sources-and-use-tables&~~~was_helpful=no)
+[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=spreadsheet-document-api-import-data-from-data-sources&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=spreadsheet-document-api-import-data-from-data-sources&~~~was_helpful=no)
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
