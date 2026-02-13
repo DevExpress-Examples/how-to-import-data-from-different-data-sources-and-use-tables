@@ -23,7 +23,7 @@ This example illustrates how to use the [Worksheet.Import](https://docs.devexpre
 * [Spreadsheet Tables](https://docs.devexpress.com/WindowsForms/403253/controls-and-libraries/spreadsheet/spreadsheet-tables)
 * [How to: Import Data to a Worksheet](https://docs.devexpress.com/WindowsForms/15442/controls-and-libraries/spreadsheet/examples/data-import-and-export/how-to-import-data-to-a-worksheet)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=spreadsheet-document-api-import-data-from-data-sources&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=spreadsheet-document-api-import-data-from-data-sources&~~~was_helpful=no)
 
